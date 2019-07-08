@@ -6,7 +6,7 @@ const SearchParams = function(){
 	const [location, setLocation] = useState('Seattle, WA');	
 	const [breeds, setBreeds] = useState([]);
 	const [animal, AnimalDropdown] = useDropdown('Animal', 'dog', ANIMALS);
-	const [breed, BreedDropdown] = useDropdown('Breed', '', breeds);
+	const [breed, BreedDropdown, setBreed] = useDropdown('Breed', '', breeds);
 
 	useEffect(() => {
 		setBreeds([]);
@@ -16,7 +16,7 @@ const SearchParams = function(){
 			const breedStrings = breeds.map(({ name }) => name);
 			setBreeds(breedStrings);
 		}, error => console.error);
-	});
+	}, [animal, setBreed, setBreeds]);
 
 	return (
 		<div className='search-params'>
