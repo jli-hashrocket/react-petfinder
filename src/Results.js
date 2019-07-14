@@ -1,5 +1,5 @@
 import React from "react";
-import Pet from "./Pet";
+import pet from '@frontendmasters/pet';
 
 const Results = ({ pets }) => {
 	return (
