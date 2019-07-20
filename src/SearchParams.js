@@ -15,9 +15,11 @@ const SearchParams = function(){
 			location,
 			breed,
 			type: animal
-		})
+		});
 
 		setPets(animals || []);
+		console.log(animals);
+		console.log(pets);
 	}
 
 	useEffect(() => {
@@ -44,8 +46,8 @@ const SearchParams = function(){
 				<AnimalDropdown />
 				<BreedDropdown />
 				<button>Submit</button>
+				<Results pets={pets} />
 			</form>
-			<Results pets={pets} />
 		</div>
 
 	);
